@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#define ROWS 10
-#define COLS 20
+#define ROWS 25
+#define COLS 50
 
 char canvas[ROWS][COLS];
 
@@ -47,11 +47,43 @@ void drawRectangle(int x, int y, int width, int height)
 
 int main()
 {
+    int choice;
+
     initCanvas();
 
-    drawRectangle(2, 2, 10, 5);
+    while(1)
+    {
+        printf("\n");
+        printf("===== 2D Graphics Editor =====\n");
+        printf("1. Draw Rectangle\n");
+        printf("2. Display Canvas\n");
+        printf("3. Clear Canvas\n");
+        printf("4. Exit\n");
+        printf("Enter choice: ");
 
-    displayCanvas();
+        scanf("%d", &choice);
 
-    return 0;
+        switch(choice)
+        {
+            case 1:
+                drawRectangle(2, 2, 15, 6);
+                printf("Rectangle Drawn!\n");
+                break;
+
+            case 2:
+                displayCanvas();
+                break;
+
+            case 3:
+                initCanvas();
+                printf("Canvas Cleared!\n");
+                break;
+
+            case 4:
+                return 0;
+
+            default:
+                printf("Invalid Choice!\n");
+        }
+    }
 }
