@@ -45,6 +45,30 @@ void drawRectangle(int x, int y, int width, int height)
     }
 }
 
+void drawLine(int x1, int y1, int x2, int y2)
+{
+    int i;
+
+    if(y1 == y2)   // Horizontal line
+    {
+        for(i = x1; i <= x2; i++)
+        {
+            canvas[y1][i] = '*';
+        }
+    }
+    else if(x1 == x2)   // Vertical line
+    {
+        for(i = y1; i <= y2; i++)
+        {
+            canvas[i][x1] = '*';
+        }
+    }
+    else
+    {
+        printf("Only horizontal and vertical lines supported!\n");
+    }
+}
+
 int main()
 {
     int choice;
@@ -56,30 +80,73 @@ int main()
         printf("\n");
         printf("===== 2D Graphics Editor =====\n");
         printf("1. Draw Rectangle\n");
-        printf("2. Display Canvas\n");
-        printf("3. Clear Canvas\n");
-        printf("4. Exit\n");
+        printf("2. Draw Line\n");
+        printf("3. Display Canvas\n");
+        printf("4. Clear Canvas\n");
+        printf("5. Exit\n");
         printf("Enter choice: ");
 
         scanf("%d", &choice);
 
         switch(choice)
         {
+           
             case 1:
-                drawRectangle(2, 2, 15, 6);
-                printf("Rectangle Drawn!\n");
-                break;
+{
+    int x, y, width, height;
 
-            case 2:
+    printf("Enter X coordinate: ");
+    printf("DEBUG\n");
+    scanf("%d", &x);
+
+    printf("Enter Y coordinate: ");
+    scanf("%d", &y);
+
+    printf("Enter Width: ");
+    scanf("%d", &width);
+
+    printf("Enter Height: ");
+    scanf("%d", &height);
+
+    drawRectangle(x, y, width, height);
+
+    printf("Rectangle Drawn!\n");
+    break;
+}   
+
+case 2:
+{
+    int x1, y1, x2, y2;
+
+    printf("Enter x1: ");
+    scanf("%d", &x1);
+
+    printf("Enter y1: ");
+    scanf("%d", &y1);
+
+    printf("Enter x2: ");
+    scanf("%d", &x2);
+
+    printf("Enter y2: ");
+    scanf("%d", &y2);
+
+    drawLine(x1, y1, x2, y2);
+
+    printf("Line Drawn!\n");
+    break;
+}
+
+
+            case 3:
                 displayCanvas();
                 break;
 
-            case 3:
+            case 4:
                 initCanvas();
                 printf("Canvas Cleared!\n");
                 break;
 
-            case 4:
+            case 5:
                 return 0;
 
             default:
