@@ -96,7 +96,6 @@ int main()
     int x, y, width, height;
 
     printf("Enter X coordinate: ");
-    printf("DEBUG\n");
     scanf("%d", &x);
 
     printf("Enter Y coordinate: ");
