@@ -68,6 +68,19 @@ void drawLine(int x1, int y1, int x2, int y2)
         printf("Only horizontal and vertical lines supported!\n");
     }
 }
+void drawTriangle(int x, int y, int height)
+{
+    int i, j;
+
+    for(i = 0; i < height; i++)
+    {
+        for(j = 0; j <= i; j++)
+        {
+            canvas[y + i][x + j] = '*';
+        }
+    }
+}
+
 
 int main()
 {
@@ -81,9 +94,10 @@ int main()
         printf("===== 2D Graphics Editor =====\n");
         printf("1. Draw Rectangle\n");
         printf("2. Draw Line\n");
-        printf("3. Display Canvas\n");
-        printf("4. Clear Canvas\n");
-        printf("5. Exit\n");
+        printf("3. Draw Triangle\n");
+        printf("4. Display Canvas\n");
+        printf("5. Clear Canvas\n");
+        printf("6. Exit\n");
         printf("Enter choice: ");
 
         scanf("%d", &choice);
@@ -134,18 +148,35 @@ case 2:
     printf("Line Drawn!\n");
     break;
 }
+        case 3:
+{
+    int x, y, height;
 
+    printf("Enter X coordinate: ");
+    scanf("%d", &x);
 
-            case 3:
+    printf("Enter Y coordinate: ");
+    scanf("%d", &y);
+
+    printf("Enter Height: ");
+    scanf("%d", &height);
+
+    drawTriangle(x, y, height);
+
+    printf("Triangle Drawn!\n");
+    break;
+}
+
+            case 4:
                 displayCanvas();
                 break;
 
-            case 4:
+            case 5:
                 initCanvas();
                 printf("Canvas Cleared!\n");
                 break;
 
-            case 5:
+            case 6:
                 return 0;
 
             default:
