@@ -80,7 +80,25 @@ void drawTriangle(int x, int y, int height)
         }
     }
 }
+void drawCircle(int centerX, int centerY, int radius)
+{
+    int i, j;
+    int dx, dy;
 
+    for(i = 0; i < ROWS; i++)
+    {
+        for(j = 0; j < COLS; j++)
+        {
+            dx = j - centerX;
+            dy = i - centerY;
+
+            if((dx * dx) + (dy * dy) <= (radius * radius))
+            {
+                canvas[i][j] = '*';
+            }
+        }
+    }
+}
 
 int main()
 {
@@ -95,9 +113,10 @@ int main()
         printf("1. Draw Rectangle\n");
         printf("2. Draw Line\n");
         printf("3. Draw Triangle\n");
-        printf("4. Display Canvas\n");
-        printf("5. Clear Canvas\n");
-        printf("6. Exit\n");
+        printf("4. Draw Circle\n");
+        printf("5. Display Canvas\n");
+        printf("6. Clear Canvas\n");
+        printf("7. Exit\n");
         printf("Enter choice: ");
 
         scanf("%d", &choice);
@@ -166,17 +185,35 @@ case 2:
     printf("Triangle Drawn!\n");
     break;
 }
+case 4:
+{
+    int centerX, centerY, radius;
 
-            case 4:
+    printf("Enter Center X: ");
+    scanf("%d", &centerX);
+
+    printf("Enter Center Y: ");
+    scanf("%d", &centerY);
+
+    printf("Enter Radius: ");
+    scanf("%d", &radius);
+
+    drawCircle(centerX, centerY, radius);
+
+    printf("Circle Drawn!\n");
+    break;
+}
+
+            case 5:
                 displayCanvas();
                 break;
 
-            case 5:
+            case 6:
                 initCanvas();
                 printf("Canvas Cleared!\n");
                 break;
 
-            case 6:
+            case 7:
                 return 0;
 
             default:
