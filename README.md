@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a simple 2D Graphics Editor developed in C. It uses a two-dimensional character array to create and display graphical objects in the console using the `*` and `_` characters.
+This project is a simple 2D Graphics Editor developed in C. The program uses a two-dimensional character array to create, display, modify, and manage graphical objects in the console using `*` and `_` characters.
 
 ## Features
 
@@ -13,6 +13,7 @@ This project is a simple 2D Graphics Editor developed in C. It uses a two-dimens
 * Display Canvas
 * Clear Canvas
 * Delete Area from Canvas
+* Modify Objects
 * Menu-Driven Interface
 
 ## Technologies Used
@@ -23,7 +24,7 @@ This project is a simple 2D Graphics Editor developed in C. It uses a two-dimens
 
 ## Working
 
-The program maintains a canvas using a 2D character array. Users can choose different options from the menu to draw shapes on the canvas. The canvas can be displayed, cleared, and specific areas can be deleted.
+The application maintains a canvas using a 2D character array. Users can select different options from a menu to draw shapes, modify existing shapes, delete areas, clear the canvas, and display the current picture.
 
 ## System Flow Diagram
 
@@ -48,9 +49,9 @@ The program maintains a canvas using a 2D character array. Users can choose diff
 +------------------------------+
           |
           v
-+---------------------------------------------+
-| Rectangle | Line | Triangle | Circle | etc. |
-+---------------------------------------------+
++---------------------------------------------------+
+| Rectangle | Line | Triangle | Circle | Modify etc |
++---------------------------------------------------+
           |
           v
 +------------------+
@@ -90,7 +91,7 @@ __________________________________________________
 
 ## Shape Examples
 
-Rectangle
+### Rectangle
 
 ```text
 **********
@@ -99,7 +100,7 @@ Rectangle
 **********
 ```
 
-Triangle
+### Triangle
 
 ```text
 *
@@ -109,13 +110,13 @@ Triangle
 *****
 ```
 
-Line
+### Line
 
 ```text
 **************
 ```
 
-Circle (Approximation)
+### Circle (Approximation)
 
 ```text
    ***
@@ -133,28 +134,45 @@ Circle (Approximation)
 5. Display Canvas
 6. Clear Canvas
 7. Delete Area
-8. Exit
+8. Modify Object
+9. Exit
 
 ## Project Structure
 
+```text
 GraphicsEditor/
-
-* main.c
-* README.md
+│
+├── main.c
+└── README.md
+```
 
 ## How to Compile and Run
 
-Compile:
+### Compile
 
+```bash
 gcc main.c -o editor
+```
 
-Run:
+### Run (Linux)
 
+```bash
 ./editor
+```
 
-For Windows PowerShell:
+### Run (Windows PowerShell)
 
+```powershell
 .\editor.exe
+```
+
+## Learning Outcomes
+
+* Understanding of 2D arrays in C
+* Function-based program design
+* Menu-driven applications
+* Basic graphics representation using characters
+* Object creation, deletion, and modification
 
 ## Author
 
