@@ -1,0 +1,26 @@
+PROMPT 1:
+as a part of sem exam we are suppose to do a mini project for c programming subject
+and they have given the below instruction to do it and i have created repo and code
+need to paste thats it so could u please help me to write code to get the above
+instructed output please and a model example
+
+Problem Statement: Write a 2d graphics editor using * and _.
+1. Write functions to draw a circle, rectangle, line, and triangle.
+2. You should be able to add objects to the picture, delete objects from the
+   picture, and modify objects in the picture.
+3. Use a 2d array of characters to store the picture.
+4. Write a function to display the picture.
+
+RESPONSE 1:
+Claude gave me the full C code with all the functions - drawRectangle, drawLine,
+drawTriangle, drawCircle, deleteArea, modifyRectangle, modifyCircle and a main
+menu using switch case. Canvas is a 2D char array using * and _.
+
+
+PROMPT 2:
+bruhh still same it is doing remove that ig and give normal code bruh
+(the menu was showing weird symbols on windows terminal)
+
+RESPONSE 2:
+Claude fixed it by removing all unicode/special characters from the menu and
+gave plain ASCII only code with ===== style menu that works on windows.
